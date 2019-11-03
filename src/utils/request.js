@@ -6,7 +6,7 @@ import router from './../router'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: 'http://127.0.0.1:8989/api/client',
+  baseURL: 'https://jerome.chaobenxueyuan.com/api/client',
   withCredentials: true,
   timeout: 5000,
 })

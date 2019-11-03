@@ -13,9 +13,6 @@ const service = axios.create({
 
 service.interceptors.request.use(
   config => {
-    if (store.getters.token) {
-      config.headers['X-Token'] = getToken()
-    }
     return config
   },
   error => {
@@ -34,6 +31,7 @@ service.interceptors.response.use(
     if (+res.code !== 0) {
 
       if (+res.code === 50008) {
+        console.log(res);
         // to re-login
         MessageBox.confirm('登陆超时,请重新登录', '提示', {
           confirmButtonText: '重新登录',
